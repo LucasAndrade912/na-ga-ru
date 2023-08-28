@@ -1,0 +1,158 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "header"
+    "main"  
+    "footer"
+  ;
+  background-color: #b6c6f2;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  grid-area: header;
+  padding: 20px 80px;
+  margin-bottom: 32px;
+  background-color: #e1e7f5;
+}
+
+.logo {
+  object-fit: cover;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 450px;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+	z-index: 1;
+  height: 450px;
+}
+
+.card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  width: 250px;
+  margin: auto;
+}
+
+.card .aniNome {
+  margin-top: 20px;
+}
+
+.card img {
+  opacity: 0.5;
+  width: 250px;
+  height: 350px;
+  border-radius: 8px;
+  transition: .3s ease;
+}
+
+.card:hover img {
+  opacity: 1;
+}
+
+.card::before {
+  content: "Novo";
+  position: absolute;
+  z-index: 2;
+  padding: 8px;
+  background: var(--blue);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  left: -5px;
+  top: -5px;
+  text-transform: uppercase;
+}
+
+.aniEps {
+  font-size: 15px;
+  padding: 5px 16px;
+  position: absolute;
+  bottom: 90px;
+  left: -5px;
+  font-weight: 300;
+  border-top-right-radius: 8px;
+}
+
+.aniPlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.aniPlay i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 0px 48px;
+  grid-area: footer;
+	text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  gap: 10px;
+}
+
+footer nav {
+	display: flex;
+	justify-content: center;
+  gap: 50px;
+}
+
+.social {
+  margin: auto;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social a {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 390px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  footer nav {
+	  flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social {
+    width: 60%;
+  }
+}

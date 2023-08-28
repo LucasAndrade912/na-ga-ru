@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #b6c6f2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 600px;
+  background-color: white;
+  padding: 48px 32px;
+  border-radius: 4px;
+}
+
+@media (max-width: 674px) {
+  form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 375px) {
+  form label {
+    font-size: 14px;
+  }
+}
